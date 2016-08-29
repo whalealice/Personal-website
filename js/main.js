@@ -1,31 +1,10 @@
-// 动态加载sub的高度
-var oH = $(window).innerHeight()
-var oW = $(window).innerWidth()
-$('.sub').css('height',oH)
+$(function(){
+	// 动态加载sub的高度
+	var oH = $(window).innerHeight()
+	var oW = $(window).innerWidth()
+	$('.sub').css('height',oH)
+});
 
-//云朵的移动
-var home = $('#home')
-var arrImg = ['images/cloud2.png','images/cloud3.png']
-cloud1();
-cloud2();
-setInterval(function(){
-	cloud1();
-	cloud2();
-},20000)
-function cloud1(){
-	var cloud = $('<div class="cloud1" style="top:'+oH*0.8+'px"><img src="'+arrImg[0]+'"></div>')
-	home.append(cloud)
-	cloud.animate({'left': oW}, 20000,function(){
-		cloud.remove();
-	})
-}
-function cloud2(){
-	var cloud = $('<div class="cloud2" style="top:'+oH*0.4+'px"><img src="'+arrImg[1]+'"></div>')
-	home.append(cloud)
-	cloud.animate({'right': oW}, 20000,function(){
-		cloud.remove();
-	})
-}
 //键盘点击的跳转
 var coUp = $('#keyboard .up')
 var coDown = $('#keyboard .down')
@@ -56,14 +35,7 @@ function flash(){
 }
 setTimeout(function(){flash()},1200)
 
-//第一屏的动画效果
-var homeH2 = $('#home h2');
-var homeLine = $('#home .line');
-var homeNum = $('#home .number');
-var homeBox = $('#home .achievement');
-var arrNum = [3,15,50]
-var arrNum1 = [3,15,50]
-var arrTime = [ 200,50,20 ]
+
 //第二屏的元素获取
 var desH2 = $('#design h2');
 var desLine = $('#design .line');
@@ -139,7 +111,6 @@ addWheel(desBar,function(down){
 })
 
 function scroll( down ){
-	
 	var l = desDragger.offsetLeft;  //滚动条到父级的宽度
 	var oTool = desTool.clientWidth; //导航条的宽度
 	var oCont = desCont.offsetWidth; //里面的内容的宽度
@@ -229,20 +200,11 @@ $('#fullpage').fullpage({
     'afterLoad' : function(anchorLink,index){
 		switch(index){
 			case 1:			
-				setTimeout(function(){
-					homeH2.animate({"opacity": "1"}, 800,function(){
-						homeLine.animate({"width": "120"}, 600);
-					});
-				},500)
-				//第一屏的小方块
-				setTimeout(function(){
-					move(0);
-				},1000);
-				function move(m){
-					homeBox.eq(m).animate({"left": "0", "opacity": "1"}, 200,function(){
-						if (homeBox.eq(m+1))move(m+1);  //如果有下一个元素 就再执行一遍
-					})
-				}
+				photo.animate({"top":"10"},800,function(){
+					photoText.animate({"opacity":"1"},200);
+				});
+				black.animate({"opacity":"1"},600);
+				pText.animate({"opacity":"1"},800);
 				break;
 			case 2:
 				setTimeout(function(){
@@ -259,7 +221,6 @@ $('#fullpage').fullpage({
 						if (desShow.eq(n+1)) show(n+1)
 					});
 				}
-			
 				//第二屏黑色的小块的鼠标移入
 				desGrey.mouseenter(function(){
 					$(this).stop().animate({"top": "-6"}, 200);
@@ -268,13 +229,6 @@ $('#fullpage').fullpage({
 				});
 				break;
 			case 3:
-				photo.animate({"top":"10"},800,function(){
-					photoText.animate({"opacity":"1"},200);
-				});
-				black.animate({"opacity":"1"},600);
-				pText.animate({"opacity":"1"},800);
-				break;
-			case 4:
 				abH2.delay(200).animate({"opacity": "1"}, 500,function(){
 					abLine.animate({"width": "120"}, 600);
 				});
@@ -307,7 +261,7 @@ $('#fullpage').fullpage({
 					},250)
 				},1000)
 				break;
-			case 5:
+			case 4:
 				//标题的显示
 				awH2.delay(1000).animate({"opacity": "1"}, 500,function(){
 					awLine.animate({"width": "120"}, 600);
@@ -330,7 +284,7 @@ $('#fullpage').fullpage({
 					},250)
 				},1000)
 				//第五屏小方块里面的数字的变化
-				var awNum = [ 90,90,80,80,70 ]
+				var awNum = [ 90,90,80,80,60 ]
 				setTimeout(function(){
 					awShow(0);
 				},2800)
@@ -352,17 +306,17 @@ $('#fullpage').fullpage({
 					});
 				}
 				break;
-			case 6:
+			case 5:
 				setTimeout(function(){
 					caseImg.animate({"top": "0", "opacity": "1"}, 800,function(){
 						caseH2.animate({"opacity": "1"}, 800,function(){
 							caseLine.animate({"width": "120"}, 600);
 						});	
 					});
-					caseText.animate({"top": "80", "opacity": "1"}, 800);
+					caseText.animate({"top": "10", "opacity": "1"}, 800);
 				},300)
 				break;
-			case 7:
+			case 6:
 				setTimeout(function(){
 					conH2.animate({"opacity": "1"}, 800,function(){
 						conLine.animate({"width": "120"}, 600);
@@ -391,9 +345,10 @@ $('#fullpage').fullpage({
     'onLeave' : function(anchorLink,index){
     	switch(index){
 			case 1:
-				homeH2.css("opacity","0");
-				homeLine.css("width","0");
-				homeBox.animate({"left": "100", "opacity": "0"}, 0);
+				photo.animate({"top":"200"},0);
+				photoText.css("opacity","0");
+				black.css("opacity","0");
+				pText.css("opacity","0");
 				break;	
 			case 2:
 				desH2.css("opacity","0");
@@ -402,12 +357,6 @@ $('#fullpage').fullpage({
 				desShow.animate({"top":"-150", "opacity": "0"}, 0)
 				break;
 			case 3:
-				photo.animate({"top":"200"},0);
-				photoText.css("opacity","0");
-				black.css("opacity","0");
-				pText.css("opacity","0");
-				break;
-			case 4:
 				abH2.css("opacity","0");
 				abLine.css("width","0");
 				abMark.eq(0).css('width', '900');
@@ -420,7 +369,7 @@ $('#fullpage').fullpage({
 				abInfo.css('transform', 'scale(0)');		
 				abTitle.css('transform', 'scale(0)');		
 				break;
-			case 5:
+			case 4:
 				awH2.css('opacity','0');
 				awLine.css('width','0');
 				awMark.eq(0).css('height','600');
@@ -431,13 +380,13 @@ $('#fullpage').fullpage({
 				awMent.animate({"left": "80", "opacity": "0"}, 0);
 				awFront.text('0%')
 				break;
-			case 6:
+			case 5:
 				caseH2.css('opacity','0');
 				caseLine.css('width','0');
 				caseImg.animate({"top": "-500", "opacity": "0"}, 0);	
 				caseText.animate({"top": "200", "opacity": "0"}, 0);
 				break;
-			case 7:
+			case 6:
 				conH2.css('opacity','0');
 				conLine.css('width','0');
 				conCube.animate({"top": "140","opacity": "0"},0)
@@ -445,40 +394,6 @@ $('#fullpage').fullpage({
 				break;
 			default:
 				break;
-		}
-    },
-    'afterRender' : function (){
-    	
-    	setTimeout(function(){
-			homeH2.animate({"opacity": "1"}, 800,function(){
-				homeLine.animate({"width": "120"}, 600);
-			});
-		},500)
-		//第一屏的小方块
-		setTimeout(function(){
-			move(0);
-		},1000);
-		function move(n){
-			homeBox.eq(n).animate({"left": "0", "opacity": "1"}, 200,function(){
-				if (homeBox.eq(n+1))move(n+1);  //如果有下一个元素 就再执行一遍
-				//里面的数字的变化
-				homeBox[n].m = 0 ;
-				homeBox[n].timer = setInterval(function(){
-					homeBox[n].m++;
-					//判断如果到了指定的数字就让他停止
-					if ( homeBox[n].m == arrNum[n] ) {
-						clearInterval(homeBox[n].timer);
-						//才开始执行鼠标移入的效果
-						homeBox.mouseenter(function(){
-							$(this).stop().animate({"top": "-15"}, 200);
-						}).mouseleave(function(){
-							$(this).stop().animate({"top": "0"}, 200);
-						})
-					};
-					homeNum.eq(n).text(homeBox[n].m)
-
-				},arrTime[n])
-			})
 		}
     }
 })

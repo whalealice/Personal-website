@@ -25,7 +25,7 @@ a:hover{color: #fff}
 /*清除浮动*/
 .clear:after { content:'' ;display:block; clear:both;}
 .clear{ zoom:1;}
-
+.comWidth{width: 1200px;margin: 0 auto;height: 100%;position: relative;}
 /*头部导航*/
 header{
 	width: 100%;
@@ -165,7 +165,6 @@ header{
 /*home*/
 #home{
 	background: #08233e;
-	overflow: hidden;
 }
 #home .cloud1{
 	position: absolute;
@@ -236,7 +235,6 @@ header{
 /*desgin*/
 #design{
 	background: #f8823c;
-	position: relative;
 }
 #design .content{
 	height: 550px;
@@ -281,6 +279,7 @@ header{
 	margin-bottom: 30px;
 	position: relative;
 	left:0;    /*改变这个值实现滚动条的事件*/
+	overflow:hidden;
 }
 #design .container .type{
 	float: left;
@@ -292,24 +291,19 @@ header{
 #design .type .visual{
 	float: left;
 	margin-right: 25px;
+	padding-top: 50px;
 }
 #design .description{
-	padding: 25px 25px 0 238px;
 	position:relative;
 }
 #design .description h3{
-	font-size: 26px;
-	font-weight: lighter;
-}
-#design .description h3 .bold{
-	font-size: 30px;
+	font-size: 24px;
 	font-family: 'Helvetica';
 	font-weight: bold;
 	height: 42px;
 }
 #design .description p{
-	padding: 10px 0 ;
-	line-height: 12px;
+	line-height: 28px;
 	font-size: 16px;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -320,9 +314,6 @@ header{
 	margin-top: 5px;
 	position: relative;
 	background: url(../images/btn-view-projects.png) no-repeat;
-}
-#design .iphone .description{ 
-	padding:25px 25px 0 145px;
 }
 .design-bar .scrollTools{
 	display: block;
@@ -355,8 +346,6 @@ header{
 /*about*/
 #about{
 	background: #2c5379;
-	position: relative;
-	overflow: hidden;
 }
 #about .bottom{
 	height: 50%;
@@ -448,7 +437,7 @@ header{
 #about .content .line4{
 	right:60px;
 	top:359px;   /*1000*/
-	height: 800px;
+	height: 900px;
 	width: 15px;  /*javascript*/
 }
 #about .career .point{
@@ -808,7 +797,7 @@ header{
 #case .holder .resumeBox{
 	position: absolute;
 	left:0;
-	width: 640px;
+	width: 600px;
 	height: 480px;
 	background: #fcc19e;
 	border-radius: 16px;
@@ -816,7 +805,7 @@ header{
 	overflow: hidden;
 }
 #case .holder .introduction{
-	width: 300px;
+	width: 370px;
 	font-size: 12px;
 	padding-left:40px;
 	padding-right:14px;
@@ -833,8 +822,8 @@ header{
 	font-weight: bold;
 }
 #case .introduction p{
-	line-height: 20px;
-	font-size: 14px;
+	line-height: 26px;
+	font-size: 16px;
 }
 #case .resumeBox .resume1{
 	width: 50%;
@@ -851,7 +840,7 @@ header{
 	top: 0;
 	width: 50%;
 	height: 480px;
-	background: url(../images/project-2.jpg) no-repeat left top;
+	background: url(../images/project1.jpg) no-repeat ;
 }
 #case .resumeBox .slider{
 	position: absolute;
@@ -933,7 +922,4 @@ header{
 }
 #contact .cube:nth-of-type(3) .talk{
 	margin-left: 8px;
-}
-#contact .cube:nth-of-type(4) .talk{
-	margin-left: 55px;
 }

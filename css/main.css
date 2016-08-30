@@ -346,6 +346,7 @@ header{
 /*about*/
 #about{
 	background: #2c5379;
+	overflow: hidden;
 }
 #about .bottom{
 	height: 50%;

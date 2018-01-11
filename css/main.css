@@ -1,0 +1,926 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,a,table,td,img,div,dl,dt,dd,input,span{
+	margin:0;padding:0; 
+	color:#fff;
+}
+body,html{
+	overflow-x:hidden;
+}
+body,div{ 
+	font-size:16px;
+	color:#666;
+}
+img { border:none;}
+ul,ol,li { list-style:none; vertical-align:top;}
+input,select,textarea { outline:none;}/*火狐有边框*/
+textarea { resize:none;}
+a { 
+	color: #fff;
+	text-decoration: none;
+	outline-style: none;
+	cursor: pointer;
+}
+a:hover{color: #fff}
+/*清除浮动*/
+.clear:after { content:'' ;display:block; clear:both;}
+.clear{ zoom:1;}
+.comWidth{width: 1200px;margin: 0 auto;height: 100%;position: relative;}
+/*头部导航*/
+header{
+	width: 100%;
+	background: #08233e;
+	padding-bottom: 20px;
+	position: absolute;
+	z-index: 10;
+}
+
+#nav {
+	width: 1024px;
+	height: 70px;
+	margin:0 auto;
+	z-index: 10;
+}
+#nav h1{
+	float: left;
+}
+#nav .navbar{
+	font-size:14px;
+	float: right;
+}
+#nav .navbar a{
+	display: inline-block;
+	margin:38px 9px 0;
+	padding-bottom: 9px;
+}
+#nav .navbar a:hover, #nav .navbar .selected{
+	border-bottom:4px solid #fff;
+}
+#nav .navbar .be:hover,#nav .navbar .fb:hover,#nav .navbar .mail:hover{
+	border-bottom: none;
+}
+#nav .navbar .be,#nav .navbar .fb,#nav .navbar .mail{
+	height: 62px;
+	float: right;
+	margin:0;
+}
+#nav .navbar .be{
+	width: 46px;
+	background: url(../images/home-sprite.png)no-repeat right 18px;
+}
+#nav .navbar .fb{
+	width: 36px;
+	background: url(../images/home-sprite.png)no-repeat -396px 18px;
+	border-left:1px solid #213951;
+	border-right:1px solid #213951;
+}
+#nav .navbar .mail{
+	width: 56px;
+	background: url(../images/home-sprite.png)no-repeat -305px 18px;
+}
+/*键盘*/
+#keyboard{
+	position: fixed;
+	width: 100%;
+	bottom:30px;
+	z-index: 10;
+}
+#keyboard .holder{
+	width: 95px;
+	margin:0 auto;
+}
+#keyboard .holder .btn {
+    width: 31px;
+    height: 31px;
+    float: left;
+}
+#keyboard .holder .up{
+	margin:0 32px;
+	background: url(../images/home-sprite.png) no-repeat -245px -56px;
+}
+#keyboard .holder .up1{
+	margin:0 32px;
+	background: url(../images/home-sprite.png) no-repeat -245px -24px;
+}
+#keyboard .holder .left{
+	margin: 1px 1px 0 0 ;
+	background: url(../images/home-sprite.png) no-repeat -213px -88px;
+	float: left;
+}
+#keyboard .holder .left1{
+	margin: 1px 1px 0 0 ;
+	background: url(../images/home-sprite.png) no-repeat -181px -88px;
+	float: left;
+}
+#keyboard .holder .down{
+	margin: 1px 1px 0 0 ;
+	background: url(../images/home-sprite.png) no-repeat -245px -120px;
+	float: left;
+}
+#keyboard .holder .down1{
+	margin: 1px 1px 0 0 ;
+	background: url(../images/home-sprite.png) no-repeat -245px -88px;
+	float: left;
+}
+#keyboard .holder .right{
+	margin: 1px 0 0 0 ;
+	background: url(../images/home-sprite.png) no-repeat -277px -88px;
+	float: left;
+}
+#keyboard .holder .right1{
+	margin: 1px 0 0 0 ;
+	background: url(../images/home-sprite.png) no-repeat -309px -88px;
+	float: left;
+}
+/*右侧导航条*/
+#sidebar{
+	position: fixed;
+	right: 20px;
+	top:40%;
+	z-index: 200;
+}
+#sidebar li{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #fff;
+	margin:0 0 12px 5px;
+}
+#sidebar .active{
+	width: 15px;
+	height: 15px;
+	border:2px solid #fff;
+	background: none;
+	margin-left: 0;
+}
+
+/*通用线条*/
+.sub .line{
+	height: 4px;
+	width: 0px;  /*javascript*/
+	background: #fff;
+	display: inline-block;
+	margin:12px 25px;
+}
+/*home*/
+#home{
+	background: #08233e;
+}
+#home .cloud1{
+	position: absolute;
+	/*top: 480px;*/
+	left: -170px;
+	z-index: 1;
+	height:82px;
+	width:119px;
+}
+#home .cloud2{
+	position: absolute;
+	/*top: 240px;*/
+	right: -90px;
+}
+#home .content{
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-200px;
+	margin-left: -512px; 
+	z-index: 10;
+}
+#home h2 .bold{
+	color:#fff;
+	font-size: 50px;
+	line-height: 55px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#home h2{
+	margin-top: 20px;
+	font-size: 45px;
+	line-height: 30px;
+	font-weight: lighter;
+	font-family: 'fantasy';
+	z-index: 10;
+}
+#home .stats{
+	padding: 65px 0 0 ;
+}
+#home .stats a{
+	left: 0;
+	opacity: 1;
+	margin-top: 15px;
+}
+#home .stats .achievement{
+	width: 142px;
+	height: 158px;
+	text-align: center;
+	float: left;
+	margin:20px 60px 0 0 ;
+	position: relative;
+	left:100px;  /* javascript*/
+	top:0; /* javascript*/
+	opacity: 0;
+	background: url(../images/home-sprite.png)no-repeat -5px -7px;
+}
+#home .stats .achievement .number{
+	display: block;
+	padding: 40px 0 5px;
+	font-size: 48px;
+	font-weight: bold;
+	font-family: 'Helvetica';
+}
+
+/*desgin*/
+#design{
+	background: #f8823c;
+}
+#design .content{
+	height: 550px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-275px;
+	margin-left: -512px; 
+}
+#design h2 .bold{
+	color:#fff;
+	font-size: 50px;
+	line-height: 55px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#design h2{
+	margin-top: 10px;
+	font-size: 45px;
+	line-height: 25px;
+	font-weight: lighter;
+	font-family: 'fantasy';
+}
+#design .design-bar{
+	height: 340px;
+	width: 960px;
+	margin:45px 0 0;
+	display: block;
+	overflow: hidden;
+}
+#design .design-bar .scroll-box{
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	width: 960px;
+}
+#design .container{
+	height: auto;
+	margin-right: 0;
+	width: 1445px;
+	margin-bottom: 30px;
+	position: relative;
+	left:0;    /*改变这个值实现滚动条的事件*/
+	overflow:hidden;
+}
+#design .container .type{
+	float: left;
+	width: 480px;
+}
+#design .container .show{
+	position: relative;
+}
+#design .type .visual{
+	float: left;
+	margin-right: 25px;
+	padding-top: 50px;
+}
+#design .description{
+	position:relative;
+}
+#design .description h3{
+	font-size: 24px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	height: 42px;
+}
+#design .description p{
+	line-height: 28px;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#design .description .grey{
+	display: inline-block;
+	height: 30px;
+	width: 115px;
+	margin-top: 5px;
+	position: relative;
+	background: url(../images/btn-view-projects.png) no-repeat;
+}
+.design-bar .scrollTools{
+	display: block;
+	width: 960px;
+	height: 9px;
+	top: auto;
+	right: auto;
+	position: absolute;
+	bottom: 36px;
+	left:0; 
+	z-index: 20;
+}
+.design-bar .scrollTools .dragger{
+	position: absolute;
+	left: 0;
+	width: 70px;
+	height: 33px;
+	top: -13px;
+	left:0;   /*javascript*/
+	cursor: pointer;
+	background: url(../images/dragger.png) no-repeat;
+	z-index: 200;
+}
+.design-bar .scrollTools .draggerRail{
+	height: 9px;
+	width: 960px;
+	background: url(../images/sliderbar-horizontal.png) no-repeat;
+}
+
+/*about*/
+#about{
+	background: #2c5379;
+	overflow: hidden;
+}
+#about .bottom{
+	height: 50%;
+	width: 1024px;
+	position: absolute;
+	left: 50%;
+	margin-left: -512px;
+	bottom: 0;
+	z-index:1;
+	background: url(../images/career-bottom.png) 951px repeat-y;
+	overflow: hidden;
+}
+#about .content{
+	height: 550px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-275px;
+	margin-left: -512px; 
+	z-index: 2;
+}
+#about h2 .bold{
+	color:#fff;
+	font-size: 50px;
+	line-height: 55px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#about h2{
+	margin-top: 10px;
+	font-size: 45px;
+	line-height: 25px;
+	font-weight: lighter;
+	font-family: 'fantasy';
+}
+#about .career{
+	height: 363px;
+	margin-top: 60px;
+	position: relative;
+	background: url(../images/career-top.png) left top no-repeat;
+}
+#about .content .mark{
+	position: absolute;
+	background: #2c5379;
+}
+#about .content .line1{
+	right: 125px;
+	top:0;
+	height: 15px;
+	width: 900px;  /*javascript*/
+}
+#about .content .curve1{
+	right: 51px;
+	top:0;
+	height: 152px;
+	width: 74px;
+	overflow: hidden;
+	background: #2c5379;
+}
+#about .content .line2{
+	left:219px;
+	top:138px;
+	height: 15px;
+	width: 680px;  /*javascript*/
+}
+#about .content .curve2{
+	left: 143px;
+	top:138px;
+	height: 155px;
+	width: 76px;
+	overflow: hidden;
+	background: #2c5379;
+}
+#about .content .line3{
+	right:125px;
+	top:280px;
+	height: 15px;
+	width: 680px;  /*javascript*/
+}
+#about .content .curve3{
+	right: 51px;
+	top:284px;
+	height: 76px;
+	width: 76px;
+	overflow: hidden;
+	background: #2c5379;
+}
+#about .content .line4{
+	right:60px;
+	top:359px;   /*1000*/
+	height: 900px;
+	width: 15px;  /*javascript*/
+}
+#about .career .point{
+	position: absolute;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+}
+#about .career .point .title{
+	font-weight: bold;
+	font-family: 'Helvetica';
+	padding: 56px 0 0 ;
+	display: inline-block;
+	background: url(../images/ico-circle.png) center top no-repeat;
+	transform:scale(0);
+	-webikt-transform:scale(0);
+	-moz-transform:scale(0);
+	-o-transform:scale(0);
+	transition:300ms;
+	-webikt-transition:300ms;
+	-moz-transition:300ms;
+	-o-transition:300ms;
+}
+#about .career .point .info{
+	padding-top: 10px;
+	line-height: 10px;
+	display: block;
+	transform:scale(0);
+	-webikt-transform:scale(0);
+	-moz-transform:scale(0);
+	-o-transform:scale(0);
+	transition:300ms;  
+	-webikt-transition:300ms;  
+	-moz-transition:300ms;  
+	-o-transition:300ms;  
+	text-align: center;
+}
+#about .career .p1{
+	left: 120px;
+	top:-26px;
+}
+#about .career .p2{
+	left: 330px;
+	top:-26px;
+}
+#about .career .p3{
+	left: 580px;
+	top:-26px;
+}
+#about .career .p4{
+	left: 800px;
+	top:-26px;
+}
+#about .career .p5{
+	right: 250px;
+	top: 116px;
+}
+#about .career .p6{
+	left: 480px;
+	top:116px;
+}
+#about .career .p7{
+	left: 220px;
+	top:116px;
+}
+#about .career .p8{
+	left: 330px;
+	top:258px;
+}
+#about .career .p9{
+	left: 580px;
+	top:258px;
+}
+#about .career .p10{
+	left: 800px;
+	top:258px;
+}
+/*awards*/
+#awards{
+	background: #eb2142;
+	position: relative;
+	overflow: hidden;
+}
+#awards .top{
+	background: url(../images/awards-top-bg.png) 948px repeat-y;
+	position: absolute;
+	left:50%;
+	height: 50%;
+	width: 1024px;
+	margin-left: -512px;
+	top:-70px;
+	z-index: 1;
+}
+#awards .content{
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-275px;
+	margin-left: -512px; 
+	z-index: 2;
+}
+#awards h2 .bold{
+	color:#fff;
+	font-size: 50px;
+	line-height: 55px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#awards h2{
+	margin-top: -5px;
+	font-size: 45px;
+	line-height: 25px;
+	font-weight: lighter;
+	font-family: 'fantasy';
+}
+#awards .career{
+	height: 200px;
+	position: relative;
+	background: url(../images/awards-bg.png) 0 -265px no-repeat;
+}
+#awards .career .mark{
+	position: absolute;
+	background: #eb2142;
+}
+#awards .career .line1{
+	right: 60px;
+	bottom: 160px;
+	height: 600px; 
+	width: 15px;
+}
+#awards .career .curve1{
+	right: 60px;
+	top: 40px;
+	height: 70px;
+	width: 70px;
+	overflow: hidden;
+	background:  #eb2142;
+}
+#awards .career .line2{
+	left: 0;
+	top: 93px;
+	height: 20px;
+	width: 900px; 
+}
+#awards .career .point{
+	position: absolute;
+	font-size: 16px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+	transform:scale(0);
+	-webikt-transform:scale(0);
+	-moz-transform:scale(0);
+	-o-transform:scale(0);
+	transition:300ms;  
+	-webikt-transition:300ms;  
+	-moz-transition:300ms;  
+	-o-transition:300ms;  
+}
+#awards .career .point .title{
+	font-weight: bold;
+	font-family: 'Helvetica';
+	padding: 56px 0 0 ;
+	display: inline-block;
+	background: url(../images/ico-circle.png) center top no-repeat;
+}
+#awards .career .point .info{
+	padding-top: 10px;
+	line-height: 10px;
+	display: block;
+}
+#awards .career .p1{
+	left: 778px;
+	top:74px;
+}
+#awards .career .p2{
+	left: 575px;
+	top:74px;
+}
+#awards .career .p3{
+	left: 370px;
+	top:74px;
+}
+#awards .career .p4{
+	left: 110px;
+	top:74px;
+}
+#awards .achievement{
+	width: 142px;
+	height: 158px;
+	float: left;
+	text-align: center;
+	margin:15px 60px 0 0;
+	position: relative;
+	cursor: pointer;
+	background: url(../images/home-sprite.png) -5px -7px no-repeat;
+	left:80px;
+	opacity: 0;
+}
+#awards .achievement span{
+	font-size: 44px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	display: block;
+	width: 142px;
+	height: 158px;
+	line-height: 158px;
+	text-align: center;
+	position: absolute;
+	
+}
+#awards .achievement .front{
+	opacity: 1;  /*javascript*/
+}
+#awards .achievement .back{
+	font-size: 24px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	top:110px;
+}
+/*portfolio*/
+#portfolio{
+	width: 100%;
+	height: 100%;
+	background: url(../images/Burcu-SANKUR_01.jpg) no-repeat;
+	position: relative;
+	background-size: cover;
+}
+#portfolio .content{
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-275px;
+	margin-left: -512px; 
+	z-index: 2;
+}
+#portfolio .photo{
+	width: 100%;
+	height: 300px;
+	position: relative;
+}
+#portfolio .photo .photoCircle{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background:#fff;
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+}
+#portfolio .photoCircle img{
+	border-radius: 50%;
+	width: 135px;
+	height: 135px;
+	position: absolute;
+	left: 50%;
+	top: 7.5px;
+	margin-left: -67.5px;
+	background-size: cover;
+}
+#portfolio .photoText{
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+}
+#portfolio .photoText h4{
+	margin-top: 20px;
+	font-weight: 400;
+	font-size: 36px;
+	letter-spacing: .1em;
+	margin-bottom: 10px;
+}
+#portfolio .photoText h5{
+	font-weight: 400;
+	letter-spacing: .1em;
+	font-size: 22px;
+}
+#portfolio .photo .line{
+    width: 60px;
+    height: 1px;
+    background-color: #fff;
+    display: block;
+    margin: 20px auto;
+    margin: 50px auto 0;
+}
+#portfolio .text{
+	text-align: center;
+	margin-top: 60px;
+	width: 100%;
+	position: absolute;
+}
+#portfolio .text h3{
+	line-height: 1em;
+	font-weight: 300;
+	font-size: 52px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+#portfolio .text h4{
+	font-weight: 300;
+	font-size: 24px;
+	letter-spacing: .2em;
+	margin-bottom: 15px;
+}
+#portfolio .text h5{
+	font-weight: 300;
+	font-size: 12px;
+	font-style: italic;
+}
+#portfolio .black{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left:0;
+	background:rgba(0,0,0,0.5);
+}
+/*case*/
+#case{
+	background: #f8823c;
+	position: relative;
+	overflow: hidden;
+}
+#case .content{
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-275px;
+	margin-left: -512px; 
+}
+#case h2 .bold{
+	color:#fff;
+	font-size: 50px;
+	line-height: 55px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#case h2{
+	margin-top: -5px;
+	font-size: 45px;
+	line-height: 25px;
+	font-weight: lighter;
+	font-family: 'fantasy';
+}
+#case .holder{
+	margin: 25px 0 0 ;
+	position: relative;
+
+}
+#case .holder .resumeBox{
+	position: absolute;
+	left:0;
+	width: 600px;
+	height: 480px;
+	background: #fcc19e;
+	border-radius: 16px;
+	box-shadow: 0 0 55px #844520;
+	overflow: hidden;
+}
+#case .holder .introduction{
+	width: 370px;
+	font-size: 12px;
+	padding-left:40px;
+	padding-right:14px;
+	position: absolute;
+	right: 0;
+	top: 200px; 
+}
+#case .introduction h3{
+	font-size: 30px;
+	padding: 8px 0;
+}
+#case .introduction h3 span{
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#case .introduction p{
+	line-height: 26px;
+	font-size: 16px;
+}
+#case .resumeBox .resume1{
+	width: 50%;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	letter-spacing: 0;
+	z-index: 3;
+	background: url(../images/mockup-1.png) no-repeat;
+}
+#case .resumeBox .resume2{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
+	height: 480px;
+	background: url(../images/project1.jpg) no-repeat ;
+}
+#case .resumeBox .slider{
+	position: absolute;
+	z-index: 4;
+	left:45%;
+	top: 0;
+	height: 480px;
+	width: 64px;
+	background: url(../images/case-sliderbar.png) no-repeat;
+}
+/*contact*/
+#contact{
+	background: #2c5379;
+	position: relative;
+	overflow: hidden;
+}
+#contact .content{
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1024px;
+	margin-top:-275px;
+	margin-left: -512px; 
+}
+#contact h2 .bold{
+	color:#fff;
+	font-size: 50px;
+	line-height: 55px;
+	font-family: 'Helvetica';
+	font-weight: bold;
+}
+#contact h2{
+	margin-top: 30px;
+	font-size: 45px;
+	line-height: 25px;
+	font-weight: lighter;
+	font-family: 'fantasy';
+}
+#contact .conBox{
+	padding:40px 0 0;
+	height: 215px;
+	position: relative;
+	top: 20px;
+}
+#contact .conBox .cube{
+	display: block;
+	width: 142px;
+	height: 158px;
+	float: left;
+	margin-top: 15px;
+	position: relative;
+	background: url(../images/cubes.png) no-repeat;
+	top: 140px;
+	opacity: 0;
+}
+#contact .conBox .tel{
+	background: url(../images/cubes.png) no-repeat -202px 0;
+	margin-left: 60px;
+}
+#contact .conBox .qq{
+	background: url(../images/cubes.png) no-repeat -404px 0;
+	margin-left: 60px;
+}
+#contact .conBox .ball{
+	background: url(../images/cubes.png) no-repeat -606px 0;
+	margin-left: 60px;
+}
+#contact .cube .talk{
+	font-size: 18px;
+	position: absolute;
+	top:180px;
+}
+#contact .cube:nth-of-type(1) .talk{
+	margin-left: -20px;
+}
+#contact .cube:nth-of-type(2) .talk{
+	margin-left: 6px;
+}
+#contact .cube:nth-of-type(3) .talk{
+	margin-left: 8px;
+}
